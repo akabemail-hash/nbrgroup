@@ -762,10 +762,19 @@ export const en = {
   "problemTypes.name": "Problem Type Name",
   "problemTypes.form.title.add": "Add Problem Type",
   "problemTypes.form.title.edit": "Edit Problem Type",
-  "problemTypes.form.confirmDelete": "Are you sure you want to delete this problem type?"
+  "problemTypes.form.confirmDelete": "Are you sure you want to delete this problem type?",
+  "districts.title":"District title",
+   "districts.name":"District name",
+   "districts.adddistrict":"District Add",
+  "districts.form.title.edit":"District Edit"
+  
 };
 
 export const az = {
+    "districts.title":"Rayonlar",
+   "districts.name":"Rayon ad",
+   "districts.adddistrict":"Rayon ekle",
+  "districts.form.title.edit":"Rayon Duzenle",
     "problemTypes.title": "Problem tip yonetimi",
   "problemTypes.addType": "Problem ozellik ekle",
   "problemTypes.editType": "Problem Ozellik duzenle",
@@ -1522,6 +1531,10 @@ export const az = {
 };
 
 export const tr = {
+     "districts.title":"Rayonlar",
+   "districts.name":"Rayon ad",
+   "districts.adddistrict":"Rayon ekle",
+  "districts.form.title.edit":"Rayon Duzenle",
   "login.title": "Güvenli Giriş",
   "login.welcome": "Tekrar hoş geldiniz! Lütfen bilgilerinizi girin.",
   "login.email": "E-posta Adresi",
