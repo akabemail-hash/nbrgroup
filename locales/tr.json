@@ -1,5 +1,8 @@
 
-{
+{    "districts.title":"Rayonlar",
+   "districts.name":"Rayon ad",
+   "districts.adddistrict":"Rayon ekle",
+  "districts.form.title.edit":"Rayon Duzenle",
   "login.title": "Güvenli Giriş",
   "login.welcome": "Tekrar hoş geldiniz! Lütfen bilgilerinizi girin.",
   "login.email": "E-posta Adresi",
