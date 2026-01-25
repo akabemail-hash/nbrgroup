@@ -39,7 +39,7 @@ const ReportItem: React.FC<{
                     </div>
                     <div>
                         <h4 className="font-bold text-lg text-text-primary dark:text-dark-text-primary">{deliveryItem.brand?.name}</h4>
-                        <p className="text-sm text-text-secondary">Delivered: {new Date(deliveryItem.delivery?.delivery_date).toLocaleDateString()}</p>
+                        <p className="text-sm text-text-secondary">Teslim Tarih: {new Date(deliveryItem.delivery?.delivery_date).toLocaleDateString()}</p>
                         {deliveryItem.delivery?.description && <p className="text-xs italic mt-1 opacity-75">"{deliveryItem.delivery.description}"</p>}
                     </div>
                  </div>
@@ -60,7 +60,7 @@ const ReportItem: React.FC<{
                 className="w-full p-2 bg-gray-100 dark:bg-gray-700 flex items-center justify-center gap-2 text-sm font-semibold text-text-secondary hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
              >
                  {expanded ? <ChevronDown className="h-4 w-4"/> : <ChevronRight className="h-4 w-4"/>}
-                 View History / Checks
+                 Tarihce
              </button>
 
              {/* Checks History */}
@@ -217,7 +217,7 @@ const FixedAssetReportCustomer: React.FC = () => {
                                      <span className="font-bold text-lg text-text-primary dark:text-dark-text-primary flex items-center gap-2">
                                          {customerName}
                                          <span className="text-xs font-normal text-white bg-primary px-2 py-0.5 rounded-full">
-                                             {groupItems.length} Assets
+                                             {groupItems.length} Sabit Varliqlar
                                          </span>
                                      </span>
                                      {isExpanded ? <ChevronDown className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
