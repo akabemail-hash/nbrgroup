@@ -250,7 +250,7 @@ const SalesRouteReport: React.FC = () => {
 
     return (
         <div className="space-y-6">
-            <h1 className="text-3xl font-bold text-text-primary dark:text-dark-text-primary">{t('Satış Marşrut Hesabatı')}</h1>
+            <h1 className="text-3xl font-bold text-text-primary dark:text-dark-text-primary">Satış Marşrut Hesabatı</h1>
 
             {/* Filters */}
              <div className="p-4 bg-surface dark:bg-dark-surface rounded-lg shadow-md border border-border dark:border-dark-border space-y-4">
