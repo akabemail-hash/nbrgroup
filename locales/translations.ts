@@ -1492,7 +1492,16 @@ export const az = {
   "salesDashboard.topCustomers.requests": "sorğu",
   "salesDashboard.topCustomers.noResults": "Müştəri sorğusu tapılmadı.",
   "sidebar.sellerRouteReport": "Satış Marşrut Hesabatı",
-
+"customerProperties.title": "Müşteri Özellikleri Yönetimi",
+  "customerProperties.addProperty": "Özellik Ekle",
+  "customerProperties.name": "Özellik Adı",
+  "customerProperties.form.title.add": "Yeni Müşteri Özelliği Ekle",
+  "customerProperties.form.title.edit": "Müşteri Özelliğini Düzenle",
+  "customerProperties.form.confirmDelete": "Bu müşteri özelliğini silmek istediğinizden emin misiniz?",
+  "notification.customerProperty.added": "Müşteri özelliği başarıyla eklendi.",
+  "notification.customerProperty.updated": "Müşteri özelliği başarıyla güncellendi.",
+  "notification.customerProperty.deleted": "Müşteri özelliği başarıyla silindi.",
+  "notification.customerProperty.saveErrorUnique": "Bu isimde bir müşteri özelliği zaten mevcut.",
 };
 
 export const tr = {
