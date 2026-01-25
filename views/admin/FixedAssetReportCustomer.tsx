@@ -182,7 +182,7 @@ const FixedAssetReportCustomer: React.FC = () => {
             <div className="p-4 bg-surface dark:bg-dark-surface rounded-lg shadow-md border border-border dark:border-dark-border space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-sm font-medium mb-1">Delivery Date Range</label>
+                        <label className="block text-sm font-medium mb-1">Tarix</label>
                         <div className="flex gap-2">
                              <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} className="w-full p-2 bg-transparent border border-border rounded-md text-sm" />
                              <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} className="w-full p-2 bg-transparent border border-border rounded-md text-sm" />
@@ -191,7 +191,7 @@ const FixedAssetReportCustomer: React.FC = () => {
                     <div>
                          <label className="block text-sm font-medium mb-1">{t('fixedAssetReportCustomer.filterByCustomer')}</label>
                          <select value={selectedCustomerId} onChange={e => setSelectedCustomerId(e.target.value)} className="w-full p-2 bg-surface dark:bg-dark-surface border border-border rounded-md text-sm">
-                             <option value="">All Customers</option>
+                             <option value="">Tum Musteriler</option>
                              {customers.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                          </select>
                     </div>
