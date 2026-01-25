@@ -3,12 +3,10 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useAppContext } from '../../contexts/AppContext';
 import { supabase } from '../../services/supabase';
 import { Customer, CustomerProperty, District } from '../../types';
-import { Plus, Edit, Trash2, X, AlertTriangle, Upload, Download, Loader2, Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Plus, Edit, Trash2, X, AlertTriangle, Upload, Download, Loader2, Search, ChevronLeft, ChevronRight, ListFilter } from 'lucide-react';
 
 // Tell TypeScript that the XLSX global variable exists
 declare var XLSX: any;
-
-const ITEMS_PER_PAGE = 15;
 
 // --- Customer Form Modal ---
 const CustomerModal: React.FC<{
@@ -184,6 +182,7 @@ const CustomerManagement: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [totalCount, setTotalCount] = useState(0);
+    const [itemsPerPage, setItemsPerPage] = useState<number>(10);
 
     const fetchDefinitions = useCallback(async () => {
         try {
@@ -206,12 +205,14 @@ const CustomerManagement: React.FC = () => {
         }
         setLoading(true);
         try {
-            const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+            const limit = itemsPerPage === -1 ? 10000 : itemsPerPage;
+            const startIndex = (currentPage - 1) * limit;
+            
             let query = supabase
                 .from('customers')
                 .select('*, created_by_user:users(full_name), customer_property:customer_properties(name), district:districts(name)', { count: 'exact' })
                 .order('name', { ascending: true })
-                .range(startIndex, startIndex + ITEMS_PER_PAGE - 1);
+                .range(startIndex, startIndex + limit - 1);
 
             if (searchTerm) {
                 query = query.or(`name.ilike.%${searchTerm}%,customer_code.ilike.%${searchTerm}%`);
@@ -229,7 +230,7 @@ const CustomerManagement: React.FC = () => {
         } finally {
             setLoading(false);
         }
-    }, [pagePermissions, showNotification, currentPage, searchTerm]);
+    }, [pagePermissions, showNotification, currentPage, searchTerm, itemsPerPage]);
 
     useEffect(() => {
         if (pagePermissions?.can_view) {
@@ -404,7 +405,7 @@ const CustomerManagement: React.FC = () => {
         }
     };
 
-    const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
+    const totalPages = itemsPerPage === -1 ? 1 : Math.ceil(totalCount / itemsPerPage);
 
     return (
         <div className="space-y-6">
@@ -435,18 +436,42 @@ const CustomerManagement: React.FC = () => {
                 <p className="text-text-secondary dark:text-dark-text-secondary">You do not have permission to view customers.</p>
             ) : (
                 <>
-                <div className="relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                    <input
-                        type="text"
-                        placeholder={t('relations.searchPlaceholder')}
-                        value={searchTerm}
-                        onChange={(e) => {
-                            setSearchTerm(e.target.value);
-                            setCurrentPage(1); // Reset to first page on search
-                        }}
-                        className="w-full md:w-1/3 p-2 pl-10 bg-surface dark:bg-dark-surface border border-border dark:border-dark-border rounded-md"
-                    />
+                <div className="flex flex-col md:flex-row gap-4 mb-4">
+                    <div className="relative flex-grow">
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                        <input
+                            type="text"
+                            placeholder={t('relations.searchPlaceholder')}
+                            value={searchTerm}
+                            onChange={(e) => {
+                                setSearchTerm(e.target.value);
+                                setCurrentPage(1); // Reset to first page on search
+                            }}
+                            className="w-full p-2 pl-10 bg-surface dark:bg-dark-surface border border-border dark:border-dark-border rounded-md"
+                        />
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <ListFilter className="h-5 w-5 text-text-secondary" />
+                        <select
+                            value={itemsPerPage}
+                            onChange={(e) => {
+                                setItemsPerPage(Number(e.target.value));
+                                setCurrentPage(1);
+                            }}
+                            className="p-2 bg-surface dark:bg-dark-surface border border-border dark:border-dark-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                        >
+                            <option value={10}>10</option>
+                            <option value={20}>20</option>
+                            <option value={50}>50</option>
+                            <option value={100}>100</option>
+                            <option value={150}>150</option>
+                            <option value={200}>200</option>
+                            <option value={250}>250</option>
+                            <option value={300}>300</option>
+                            <option value={500}>500</option>
+                            <option value={-1}>All</option>
+                        </select>
+                    </div>
                 </div>
                 <div className="bg-surface dark:bg-dark-surface rounded-lg shadow-md border border-border dark:border-dark-border overflow-x-auto">
                     <table className="min-w-full divide-y divide-border dark:divide-dark-border">
