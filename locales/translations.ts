@@ -1493,10 +1493,6 @@ export const az = {
   "salesDashboard.topCustomers.noResults": "Müştəri sorğusu tapılmadı.",
   "sidebar.sellerRouteReport": "Satış Marşrut Hesabatı",
 
-  "problemTypes.title": "Problem Type Management",
-  "problemTypes.addType": "Add Problem Type",
-  "problemTypes.editType": "Edit Problem Type",
-  "problemTypes.name": "Problem Type Name",
 };
 
 export const tr = {
