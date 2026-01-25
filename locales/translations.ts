@@ -749,6 +749,10 @@ export const en = {
 };
 
 export const az = {
+    "problemTypes.title": "Problem tip yonetimi",
+  "problemTypes.addType": "Problem ozellik ekle",
+  "problemTypes.editType": "Problem Ozellik duzenle",
+  "problemTypes.name": "Problem Ozellik Ad",
   "login.title": "Təhlükəsiz Giriş",
   "login.welcome": "Xoş gəlmisiniz! Zəhmət olmasa, məlumatlarınızı daxil edin.",
   "login.email": "E-poçt ünvanı",
@@ -1487,7 +1491,12 @@ export const az = {
   "salesDashboard.topCustomers.title": "Bu Ayın Top 5 Müştərisi",
   "salesDashboard.topCustomers.requests": "sorğu",
   "salesDashboard.topCustomers.noResults": "Müştəri sorğusu tapılmadı.",
-  "sidebar.sellerRouteReport": "Satış Marşrut Hesabatı"
+  "sidebar.sellerRouteReport": "Satış Marşrut Hesabatı",
+
+  "problemTypes.title": "Problem Type Management",
+  "problemTypes.addType": "Add Problem Type",
+  "problemTypes.editType": "Edit Problem Type",
+  "problemTypes.name": "Problem Type Name",
 };
 
 export const tr = {
@@ -2245,5 +2254,9 @@ export const tr = {
   "notification.customerProperty.added": "Müşteri özelliği başarıyla eklendi.",
   "notification.customerProperty.updated": "Müşteri özelliği başarıyla güncellendi.",
   "notification.customerProperty.deleted": "Müşteri özelliği başarıyla silindi.",
-  "notification.customerProperty.saveErrorUnique": "Bu isimde bir müşteri özelliği zaten mevcut."
+  "notification.customerProperty.saveErrorUnique": "Bu isimde bir müşteri özelliği zaten mevcut.",
+  "problemTypes.title": "Problem tip yonetimi",
+  "problemTypes.addType": "Problem ozellik ekle",
+  "problemTypes.editType": "Problem Ozellik duzenle",
+  "problemTypes.name": "Problem Ozellik Ad",
 };
