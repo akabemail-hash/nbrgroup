@@ -755,7 +755,14 @@ export const en = {
   "notification.customerProperty.added": "Customer property added successfully.",
   "notification.customerProperty.updated": "Customer property updated successfully.",
   "notification.customerProperty.deleted": "Customer property deleted successfully.",
-  "notification.customerProperty.saveErrorUnique": "A customer property with this name already exists."
+  "notification.customerProperty.saveErrorUnique": "A customer property with this name already exists.",
+   "problemTypes.title": "Problem Type Management",
+  "problemTypes.addType": "Add Problem Type",
+  "problemTypes.editType": "Edit Problem Type",
+  "problemTypes.name": "Problem Type Name",
+  "problemTypes.form.title.add": "Add Problem Type",
+  "problemTypes.form.title.edit": "Edit Problem Type",
+  "problemTypes.form.confirmDelete": "Are you sure you want to delete this problem type?"
 };
 
 export const az = {
