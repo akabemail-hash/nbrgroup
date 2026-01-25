@@ -1,5 +1,9 @@
 
 {
+  "districts.title":"District title",
+   "districts.name":"District name",
+   "districts.adddistrict":"District Add",
+  "districts.form.title.edit":"District Edit",
   "login.title": "Secure Sign In",
   "login.welcome": "Welcome back! Please enter your credentials.",
   "login.email": "Email Address",
