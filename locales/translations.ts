@@ -745,7 +745,17 @@ export const en = {
   "problemReport.reportedDate": "Reported Date",
   "problemReport.resolvedBy": "Resolved By",
   "problemReport.resolvedDate": "Resolved Date",
-  "problemReport.resolutionSection": "Resolution"
+  "problemReport.resolutionSection": "Resolution",
+   "customerProperties.title": "Customer Properties Management",
+  "customerProperties.addProperty": "Add Property",
+  "customerProperties.name": "Property Name",
+  "customerProperties.form.title.add": "Add Customer Property",
+  "customerProperties.form.title.edit": "Edit Customer Property",
+  "customerProperties.form.confirmDelete": "Are you sure you want to delete this customer property?",
+  "notification.customerProperty.added": "Customer property added successfully.",
+  "notification.customerProperty.updated": "Customer property updated successfully.",
+  "notification.customerProperty.deleted": "Customer property deleted successfully.",
+  "notification.customerProperty.saveErrorUnique": "A customer property with this name already exists."
 };
 
 export const az = {
