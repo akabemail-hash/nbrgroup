@@ -204,6 +204,15 @@ const AdminSellerVisitReport: React.FC = () => {
         else newSet.add(id);
         handleFilterChange('groupids', newSet);
     };
+
+        const handleCustomerToggle = (id: string) => {
+        const newSet = new Set(selectedCustomerIds);
+        if (newSet.has(id)) newSet.delete(id);
+        else newSet.add(id);
+        setSelectedCustomerIds(newSet);
+        setCurrentPage(1); // Reset to first page on filter change
+    };
+
     
     const handleResetFilters = () => {
         setFilters({ sellerId: '', customerId: '', startDate: '', endDate: '', groupids: new Set() });
@@ -240,6 +249,14 @@ const AdminSellerVisitReport: React.FC = () => {
                              <option value="">{t('visitRequestReport.filters.all')}</option>
                              {customers.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                          </select>
+
+                             <MultiSelectDropdown 
+                            options={customers} 
+                            selectedIds={selectedCustomerIds} 
+                            onChange={handleCustomerToggle} 
+                            label={t('displayReporting.filterByCustomer')}
+                        />
+                    </div>
                     </div>
                     <div>
                         <MultiSelectDropdown 
